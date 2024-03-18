@@ -3,15 +3,28 @@ using Restaurants.Domain.Entities;
 
 namespace Restaurants.Infrastructure.Persistence;
 
-internal class RestaurantsDbContext : DbContext
+internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options) : DbContext(options)
 {
     internal DbSet<Restaurant> Restaurants { get; set;}
     internal DbSet<Dish> Dishes { get; set;}
 
+    /*+
+     * Since .NET8, we can define primary constructor in class definition. See the class definition.
+    
+    public RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> options) : base(options)
+    {
+
+    }
+    */
+
+    /*
+     * Change to ConnectionString from appsettings.json. See the ctor
+        
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=RestaurantsDb;Trusted_Connection=True;");
     }
+    */
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

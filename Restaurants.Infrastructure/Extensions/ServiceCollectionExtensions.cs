@@ -1,0 +1,26 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Restaurants.Infrastructure.Persistence;
+
+namespace Restaurants.Infrastructure.Extensions;
+
+public static class ServiceCollectionExtensions
+{
+    /*
+     * Extension methods allow developers to add new methods to the public contract of an existing CLR type, 
+     * without having to sub-class it or recompile the original type. Extension Methods help blend the flexibility 
+     * of "duck typing" support popular within dynamic languages today with the performance and compile-time validation 
+     * of strongly-typed languages.
+     * Extension Methods enable a variety of useful scenarios, and help make possible the really powerful LINQ query framework... .
+     * 
+     * References:
+     *  https://stackoverflow.com/questions/846766/use-of-this-keyword-in-formal-parameters-for-static-methods-in-c-sharp
+     *  https://asp-blogs.azurewebsites.net/scottgu/new-orcas-language-feature-extension-methods
+     */
+    public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+    {
+        var connectionString = configuration.GetConnectionString("RestaurantsDb");
+        services.AddDbContext<RestaurantsDbContext>(options => options.UseSqlServer(connectionString));
+    }
+}
