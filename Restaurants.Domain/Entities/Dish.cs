@@ -10,5 +10,7 @@ public class Dish
     
     public decimal Price { get; set; }
 
+    public int? KiloCalories { get; set; }
+
     public int RestaurantId { get; set; } // Foreign key must match type of primary key in Restaurants table
 }
