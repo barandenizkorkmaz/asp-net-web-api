@@ -9,4 +9,6 @@ public class Dish
     public string Description { get; set; } = default!;
     
     public decimal Price { get; set; }
+
+    public int RestaurantId { get; set; } // Foreign key must match type of primary key in Restaurants table
 }
