@@ -18,7 +18,7 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json
 
 {
-  "Name": "Spicy Delights 2",
+  "Name": "Siggis",
   "Description": "A culinary experience like no other",
   "Category": "Fine Dining",
   "HasDelivery": true,
@@ -26,5 +26,5 @@ Content-Type: application/json
   "ContactNumber": "555-123-4567",
   "City": "Metropolis",
   "Street": "456 Gourmet Avenue",
-  "PostalCode": "54321"
+  "PostalCode": "54-321"
 }
