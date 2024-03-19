@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Restaurants.Application.Dtos;
-using Restaurants.Application.Dtos.Requests;
+using Restaurants.Application.Restaurants.Requests;
 using Restaurants.Application.Services;
 
 namespace Restaurants.API.Controllers;

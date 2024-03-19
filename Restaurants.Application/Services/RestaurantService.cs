@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.Logging;
-using Restaurants.Application.Dtos.Entities;
-using Restaurants.Application.Dtos.Requests;
+using Restaurants.Application.Restaurants.Dtos;
+using Restaurants.Application.Restaurants.Requests;
 using Restaurants.Domain.Entities;
 using Restaurants.Domain.Repositories;
 

@@ -1,7 +1,7 @@
 ﻿using Restaurants.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
-namespace Restaurants.Application.Dtos.Requests;
+namespace Restaurants.Application.Restaurants.Requests;
 
 public class CreateRestaurantDto
 {

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Restaurants.Application.Dtos.Requests;
+using Restaurants.Application.Restaurants.Requests;
 using Restaurants.Domain.Entities;
 
-namespace Restaurants.Application.Dtos.Entities;
+namespace Restaurants.Application.Restaurants.Dtos;
 
 public class RestaurantsProfile : Profile
 {
@@ -21,6 +21,6 @@ public class RestaurantsProfile : Profile
                     City = src.City,
                     PostalCode = src.PostalCode,
                     Street = src.Street,
-                })); 
+                }));
     }
 }

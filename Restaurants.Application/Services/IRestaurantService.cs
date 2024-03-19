@@ -1,5 +1,5 @@
-﻿using Restaurants.Application.Dtos.Entities;
-using Restaurants.Application.Dtos.Requests;
+﻿using Restaurants.Application.Restaurants.Dtos;
+using Restaurants.Application.Restaurants.Requests;
 
 namespace Restaurants.Application.Services;
 
