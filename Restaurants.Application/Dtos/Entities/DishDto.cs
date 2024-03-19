@@ -1,6 +1,6 @@
 ﻿using Restaurants.Domain.Entities;
 
-namespace Restaurants.Application.Dtos;
+namespace Restaurants.Application.Dtos.Entities;
 
 public class DishDto
 {
