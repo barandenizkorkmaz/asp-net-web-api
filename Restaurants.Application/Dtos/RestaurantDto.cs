@@ -22,6 +22,9 @@ public class RestaurantDto
 
     public List<DishDto> Dishes { get; set; } = [];
 
+    /*
+     * Mapping logic has been done by AutoMapper.
+     * 
     public static RestaurantDto? FromEntity(Restaurant? restaurant)
     {
         if (restaurant == null) return null;
@@ -38,4 +41,5 @@ public class RestaurantDto
             Dishes = restaurant.Dishes.Select(DishDto.FromEntity).ToList()
         };
     }
+    */
 }

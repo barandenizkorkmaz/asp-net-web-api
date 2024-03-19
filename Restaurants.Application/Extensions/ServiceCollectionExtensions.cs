@@ -10,5 +10,7 @@ public static class ServiceCollectionExtensions
 
         services.AddScoped<IRestaurantService, RestaurantService>();
 
+        services.AddAutoMapper(typeof(ServiceCollectionExtensions).Assembly); // Inject AutoMapper dependency.
+
     }
 }
