@@ -20,7 +20,7 @@ Content-Type: application/json
 {
   "Name": "Siggis",
   "Description": "A culinary experience like no other",
-  "Category": "Fine Dining",
+  "Category": "Turkish",
   "HasDelivery": true,
   "ContactEmail": "info@gourmetdelights.com",
   "ContactNumber": "555-123-4567",
