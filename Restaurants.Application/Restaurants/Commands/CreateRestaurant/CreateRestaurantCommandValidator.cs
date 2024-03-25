@@ -1,14 +1,14 @@
 ﻿using FluentValidation;
 using Restaurants.Application.Restaurants.Requests;
 
-namespace Restaurants.Application.Restaurants.Validators;
+namespace Restaurants.Application.Restaurants.Commands.CreateRestaurant;
 
-public class CreateRestaurantDtoValidator : AbstractValidator<CreateRestaurantDto>
+public class CreateRestaurantCommandValidator : AbstractValidator<CreateRestaurantCommand>
 {
 
     private readonly List<string> validCategories = ["Turkish", "Italian", "Mexican", "Japanese", "American", "Indian"];
 
-    public CreateRestaurantDtoValidator()
+    public CreateRestaurantCommandValidator()
     {
         RuleFor(dto => dto.Name)
             .Length(3, 100);
@@ -17,14 +17,14 @@ public class CreateRestaurantDtoValidator : AbstractValidator<CreateRestaurantDt
             //.Must(category => validCategories.Contains(category)) // lambda version
             .Must(validCategories.Contains) // or directly feed the incoming argument
             .WithMessage("Invalid category. Plese choose from the valid categories");
-            //.Custom((value, context) =>
-            //{
-            //    var isvalidcategory = validCategories.Contains(value);
-            //    if (!isvalidcategory)
-            //    {
-            //        context.AddFailure("Category", "Invalid category. Please choose from the valid categories");
-            //    }
-            //});
+        //.Custom((value, context) =>
+        //{
+        //    var isvalidcategory = validCategories.Contains(value);
+        //    if (!isvalidcategory)
+        //    {
+        //        context.AddFailure("Category", "Invalid category. Please choose from the valid categories");
+        //    }
+        //});
 
         /*
         * The rules below are redundant as ApiController already checks for non-nullable fields whether they are provided as filled or as empty.
