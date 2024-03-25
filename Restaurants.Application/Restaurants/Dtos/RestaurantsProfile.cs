@@ -11,8 +11,8 @@ public class RestaurantsProfile : Profile
     {
         CreateMap<Restaurant, RestaurantDto>() // Create mapping from src: Restaurant to dest RestaurantDto.
             .ForMember(dest => dest.City, opt => opt.MapFrom(src => src.Address == null ? null : src.Address.City))
-            .ForMember(dest => dest.PostalCode, opt => opt.MapFrom(src => src.Address == null ? null : src.Address.City))
-            .ForMember(dest => dest.Street, opt => opt.MapFrom(src => src.Address == null ? null : src.Address.City))
+            .ForMember(dest => dest.PostalCode, opt => opt.MapFrom(src => src.Address == null ? null : src.Address.PostalCode))
+            .ForMember(dest => dest.Street, opt => opt.MapFrom(src => src.Address == null ? null : src.Address.Street))
             .ForMember(dest => dest.Dishes, opt => opt.MapFrom(src => src.Dishes)); // We also need to create a mapping from Dish to DishDto
 
         CreateMap<CreateRestaurantCommand, Restaurant>() // Create mapping from src: CreateRestaurantDto to dest Restaurant.
