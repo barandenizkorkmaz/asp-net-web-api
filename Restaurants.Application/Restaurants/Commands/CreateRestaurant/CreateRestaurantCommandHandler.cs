@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using Restaurants.Application.Restaurants.Requests;
 using Restaurants.Domain.Entities;
 using Restaurants.Domain.Repositories;
 
