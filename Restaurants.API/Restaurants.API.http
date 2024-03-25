@@ -15,7 +15,7 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/3
 ###
 
 
-DELETE {{Restaurants.API_HostAddress}}/api/restaurants/4
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/15
 
 ###
 
@@ -29,7 +29,20 @@ Content-Type: application/json
   "HasDelivery": true,
   "ContactEmail": "info@gourmetdelights.com",
   "ContactNumber": "555-123-4567",
-  "City": "Metropolis",
+  "City"
   "Street": "456 Gourmet Avenue",
   "PostalCode": "54-321"
 }
+
+###
+
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/16
+Content-Type: application/json
+
+{
+  "Name": "Siggis Updated",
+  "Description": "This is a sample restaurant description",
+  "HasDelivery": true
+}
+
+###
