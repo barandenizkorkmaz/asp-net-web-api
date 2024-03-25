@@ -17,6 +17,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ErrorHandlingMiddleware>(); // Register our ErrorHandlingMiddleware to dependency injection container.
+builder.Services.AddScoped<RequestTimeLoggingMiddleware>();
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration); // Extension method. See references in the comments.
@@ -44,6 +45,7 @@ await seeder.Seed();
 
 // Use our middleware as the first middleware in the middleware pipeline.
 app.UseMiddleware<ErrorHandlingMiddleware>();
+app.UseMiddleware<RequestTimeLoggingMiddleware>();
 
 app.UseSerilogRequestLogging(); // To log app requests.
 
