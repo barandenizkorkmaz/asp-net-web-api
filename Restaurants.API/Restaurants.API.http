@@ -10,12 +10,12 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 ###
 
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/3
+GET {{Restaurants.API_HostAddress}}/api/restaurants/19
 
 ###
 
 
-DELETE {{Restaurants.API_HostAddress}}/api/restaurants/15
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/17
 
 ###
 
@@ -29,20 +29,20 @@ Content-Type: application/json
   "HasDelivery": true,
   "ContactEmail": "info@gourmetdelights.com",
   "ContactNumber": "555-123-4567",
-  "City"
-  "Street": "456 Gourmet Avenue",
-  "PostalCode": "54-321"
+  "City": "Berlin",
+  "Street": "Berliner Strasse",
+  "PostalCode": "11-111"
 }
 
 ###
 
-PATCH {{Restaurants.API_HostAddress}}/api/restaurants/16
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/18
 Content-Type: application/json
 
 {
   "Name": "Siggis Updated",
   "Description": "This is a sample restaurant description",
-  "HasDelivery": true
+  "HasDelivery": false
 }
 
 ###
