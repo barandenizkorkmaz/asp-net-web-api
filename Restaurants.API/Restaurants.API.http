@@ -10,7 +10,7 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 ###
 
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/145
+GET {{Restaurants.API_HostAddress}}/api/restaurants/9
 
 ###
 
@@ -43,6 +43,18 @@ Content-Type: application/json
   "Name": "Siggis Updated",
   "Description": "This is a sample restaurant description",
   "HasDelivery": false
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurant/9/dishes
+Content-Type: application/json
+
+{
+  "Name": "Spaghetti Bolognese 2",
+  "Description": "Classic Italian pasta",
+  "Price": 14.99,
+  "KiloCalories": 750
 }
 
 ###
