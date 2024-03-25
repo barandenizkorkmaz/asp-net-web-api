@@ -70,3 +70,7 @@ GET {{Restaurants.API_HostAddress}}/api/restaurant/1/dishes/1
 DELETE {{Restaurants.API_HostAddress}}/api/restaurant/9/dishes
 
 ###
+
+GET http://localhost:5000/api/restaurant/9/dishes/7
+
+###
