@@ -2,7 +2,7 @@
 
 namespace Restaurants.Application.Restaurants.Commands.UpdateRestaurant;
 
-public class UpdateRestaurantCommand : IRequest<bool>
+public class UpdateRestaurantCommand : IRequest
 {
     public int Id { get; set; }
     // Controller will automatically check if these fields are null or not!
