@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
-using Restaurants.Application.Services;
 
 namespace Restaurants.Application.Extensions;
 
@@ -11,7 +10,8 @@ public static class ServiceCollectionExtensions
     {
         var applicationAssembly = typeof(ServiceCollectionExtensions).Assembly;
 
-        services.AddScoped<IRestaurantService, RestaurantService>();
+        //services.AddScoped<IRestaurantService, RestaurantService>(); // No longer needed since we switch to CQRS pattern
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(applicationAssembly));
 
         services.AddAutoMapper(applicationAssembly); // Inject AutoMapper dependency 
 
