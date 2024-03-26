@@ -1,3 +1,7 @@
+@host = http://localhost
+@port = 5000
+@token = CfDJ8N5J81t98bxNuj_VhsUsCQlLki8rrW-W5XDKdTFW4w8SLvfRvcmozDxZZ27ColLHwhfVUFP1qIAnbtGPgJHtaMZ-s-6a7ml1IbkhqueGK8CXjFg5GnoHd4iTm4HBRv6zJySDwEyjb--GkQHeAuwF9k17m0yyb-KBC6dYqLRanaKKFdnPdbLNIYRYJIEleK3cky9b7zG_gqbSI-XEs4OdFympjVxB5kFJqcMDVIiy8w2Y3WrQmgGJCddRQ12d1Io6HxnwWXaNRlZwqLcxDEXOdXfow4b8zRFFQNWcq_hD9NcEaOxT-mxCqIxYsOqymLfJcCb-ZUHgFoUPgZ7EoehIXzRvOvj4TyrNj_yiqvmAdiLVXv7Isv6acg-8PHSB_YHqLNrAHs7PJLKahESLKbDZ2iTEfR1_vaKWOkO7kUOyy0TPz5EQ7KYHca6KeEuwi9dl_HMhPOw9V-pV71yAiFTjTVngztCtMIRwHv4amEUmk0HjyR38Inh9qA7IVstrxXDno3IKyhdVhuE-a2LcErEWPYgjRokBuaxgh--HgWzPHbUdH8htBy5y3f6r3u8LgaBzb-TWh1N-B1f2b7f390juGGBnhhYOVP_7_w0BT4ixF8qlNjRUq7-taJSwH9twB59_uaYfkyuOwtOgvxvXhOvLYKZoPGnko9sKSBiWzKBtslLV775edrarKeNPkEZ9O7sX_Jj6BHwEFlnRPt3pTHV5v6c
+
 @Restaurants.API_HostAddress = http://localhost:5000
 
 GET {{Restaurants.API_HostAddress}}/weatherforecast/
@@ -6,7 +10,7 @@ Accept: application/json
 ###
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants
-
+Authorization: Bearer {{token}}
 ###
 
 
