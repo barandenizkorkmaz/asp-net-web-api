@@ -74,3 +74,21 @@ DELETE {{Restaurants.API_HostAddress}}/api/restaurant/9/dishes
 GET http://localhost:5000/api/restaurant/9/dishes/7
 
 ###
+
+POST {{Restaurants.API_HostAddress}}/register
+Content-Type: application/json
+
+{
+  "email": "example@example.com",
+  "password": "Example_123"
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/login
+Content-Type: application/json
+
+{
+  "email": "example@example.com",
+  "password": "Example_123"
+}
