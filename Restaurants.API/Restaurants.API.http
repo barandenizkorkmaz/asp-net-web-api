@@ -10,7 +10,7 @@ Accept: application/json
 ###
 
 GET {{Restaurants.API_HostAddress}}/api/restaurants
-Authorization: Bearer {{token}}
+#Authorization: Bearer {{token}}
 ###
 
 
