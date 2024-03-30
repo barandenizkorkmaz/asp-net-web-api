@@ -39,5 +39,10 @@ internal class RestaurantsDbContext(DbContextOptions<RestaurantsDbContext> optio
             .WithOne() // Many-to-one relationship from dish side (many dishes to one restaurant)
             .HasForeignKey(d => d.RestaurantId); // One-to-many relationship
 
+        // A restaurant can have only one owner, whereas an owner can own multiple restaurants.
+        modelBuilder.Entity<User>()
+            .HasMany(u => u.OwnedRestaurants)
+            .WithOne(r => r.Owner)
+            .HasForeignKey(r => r.OwnerId);
     }
 }

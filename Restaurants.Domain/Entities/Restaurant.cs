@@ -19,4 +19,8 @@ public class Restaurant
     public Address? Address { get; set; }
 
     public List<Dish> Dishes { get; set; } = new();
+
+    public User Owner { get; set; } = default!; // We force this field to be not null!
+     
+    public string OwnerId { get; set; } = default!; // We force this field to be not null!
 }
