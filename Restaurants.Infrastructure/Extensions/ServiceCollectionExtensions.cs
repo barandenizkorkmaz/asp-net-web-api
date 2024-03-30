@@ -40,5 +40,12 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IRestaurantsRepository, RestaurantsRepository>();
         services.AddScoped<IDishesRepository, DishesRepository>();
 
+        // Add custom policy for authorization
+        
+        // Create a policy called `HasNationality`. If a user has claim `Nationality`, it means that this user will have this policy.
+        services.AddAuthorizationBuilder()
+            .AddPolicy(PolicyNames.HasNationality, builder => builder.RequireClaim(AppClaimTypes.Nationality, "Turkish", "Ukrainian"));
+
+
     }
 }
