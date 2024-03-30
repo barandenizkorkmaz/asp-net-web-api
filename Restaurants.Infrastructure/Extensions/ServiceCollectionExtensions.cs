@@ -7,6 +7,7 @@ using Restaurants.Domain.Entities;
 using Restaurants.Domain.Interfaces;
 using Restaurants.Domain.Repositories;
 using Restaurants.Infrastructure.Authorization;
+using Restaurants.Infrastructure.Authorization.Requirements.CreatedMultipleRestaurantsRequirement;
 using Restaurants.Infrastructure.Authorization.Requirements.MinimumAge;
 using Restaurants.Infrastructure.Authorization.Services;
 using Restaurants.Infrastructure.Persistence;
@@ -46,14 +47,18 @@ public static class ServiceCollectionExtensions
 
         // Add custom policy for authorization
         services.AddScoped<IAuthorizationHandler, MinimumAgeRequrementsHandler>();
+        services.AddScoped<IAuthorizationHandler, CreatedMultipleRestaurantsRequirementHandler>();
 
         // Create a policy called `HasNationality`. If a user has claim `Nationality`, it means that this user will have this policy.
         services.AddAuthorizationBuilder()
-            .AddPolicy(PolicyNames.HasNationality, builder => builder.RequireClaim(AppClaimTypes.Nationality, "Turkish", "Ukrainian"))
-            .AddPolicy(PolicyNames.AtLeast18, builder => builder.AddRequirements(new MinimumAgeReqirement(18)));
+            .AddPolicy(PolicyNames.HasNationality, 
+                builder => builder.RequireClaim(AppClaimTypes.Nationality, "Turkish", "Ukrainian"))
+            .AddPolicy(PolicyNames.AtLeast18, 
+                builder => builder.AddRequirements(new MinimumAgeReqirement(18)))
+            .AddPolicy(PolicyNames.CreatedAtLeast2Restaurants,
+                builder => builder.AddRequirements(new CreatedMultipleRestaurantsRequirement(2)));
 
         services.AddScoped<IRestaurantAuthorizationService, RestaurantAuthorizationService>();
-
 
     }
 }
