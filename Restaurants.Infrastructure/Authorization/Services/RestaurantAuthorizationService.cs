@@ -2,11 +2,12 @@
 using Restaurants.Application.Users;
 using Restaurants.Domain.Constants;
 using Restaurants.Domain.Entities;
+using Restaurants.Domain.Interfaces;
 
 namespace Restaurants.Infrastructure.Authorization.Services;
 
-public class RestaurantAuthozationService(ILogger<RestaurantAuthozationService> logger,
-    IUserContext userContext) : IRestaurantAuthozationService
+public class RestaurantAuthorizationService(ILogger<RestaurantAuthorizationService> logger,
+    IUserContext userContext) : IRestaurantAuthorizationService
 {
     public bool Authorize(Restaurant restaurant, ResourceOperation resourceOperation)
     {
