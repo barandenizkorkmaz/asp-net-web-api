@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Restaurants.Domain.Entities;
 using Restaurants.Domain.Repositories;
 using Restaurants.Infrastructure.Authorization;
+using Restaurants.Infrastructure.Authorization.Requirements.MinimumAge;
 using Restaurants.Infrastructure.Persistence;
 using Restaurants.Infrastructure.Repositories;
 using Restaurants.Infrastructure.Seeders;
@@ -41,10 +43,13 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IDishesRepository, DishesRepository>();
 
         // Add custom policy for authorization
-        
+        services.AddScoped<IAuthorizationHandler, MinimumAgeRequrementsHandler>();
+
         // Create a policy called `HasNationality`. If a user has claim `Nationality`, it means that this user will have this policy.
         services.AddAuthorizationBuilder()
-            .AddPolicy(PolicyNames.HasNationality, builder => builder.RequireClaim(AppClaimTypes.Nationality, "Turkish", "Ukrainian"));
+            .AddPolicy(PolicyNames.HasNationality, builder => builder.RequireClaim(AppClaimTypes.Nationality, "Turkish", "Ukrainian"))
+            .AddPolicy(PolicyNames.AtLeast18, builder => builder.AddRequirements(new MinimumAgeReqirement(18)));
+
 
 
     }

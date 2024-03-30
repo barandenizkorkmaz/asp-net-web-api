@@ -1,15 +1,18 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Restaurants.Application.Dishes.Commands.CreateDish;
 using Restaurants.Application.Dishes.Commands.DeleteDishesByRestaurantId;
 using Restaurants.Application.Dishes.Dtos;
 using Restaurants.Application.Dishes.Queries.GetDishByIdForRestaurantId;
 using Restaurants.Application.Dishes.Queries.GetDishesByRestaurantId;
+using Restaurants.Infrastructure.Authorization;
 
 namespace Restaurants.API.Controllers;
 
 [Route("api/restaurant/{restaurantId}/dishes")]
 [ApiController]
+[Authorize]
 public class DishesController(IMediator mediator) : ControllerBase
 {
     // observe that restaurantId is a route paramater in controller-level
@@ -22,6 +25,7 @@ public class DishesController(IMediator mediator) : ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Policy = PolicyNames.AtLeast18)]
     public async Task<ActionResult<IEnumerable<DishDto>>> GetAllByRestaurantId([FromRoute] int restaurantId)
     {
         var dishes = await mediator.Send(new GetDishesByRestaurantIdQuery(restaurantId));
