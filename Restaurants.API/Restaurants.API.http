@@ -18,7 +18,7 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants?searchphrase=kfc
 #Authorization: Bearer {{token}}
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants?searchphrase=wiza&pagesize=10&pagenumber=2
+GET {{Restaurants.API_HostAddress}}/api/restaurants?searchphrase=wiza&pagesize=5&pagenumber=3
 #Authorization: Bearer {{token}}
 ###
 
