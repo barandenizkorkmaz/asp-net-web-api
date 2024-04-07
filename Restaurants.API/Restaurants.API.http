@@ -14,6 +14,10 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 ###
 
 
+GET {{Restaurants.API_HostAddress}}/api/restaurants?searchphrase=kfc
+#Authorization: Bearer {{token}}
+###
+
 GET {{Restaurants.API_HostAddress}}/api/restaurants/9
 
 ###
