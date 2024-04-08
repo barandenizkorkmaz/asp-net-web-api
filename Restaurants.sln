@@ -10,11 +10,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Domain", "Restaurants.Domain\Restaurants.Domain.csproj", "{6877DF30-25A1-4CE5-A5F5-2E86EB39BC3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurants.Domain", "Restaurants.Domain\Restaurants.Domain.csproj", "{6877DF30-25A1-4CE5-A5F5-2E86EB39BC3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Application", "Restaurants.Application\Restaurants.Application.csproj", "{709CF70D-B81D-47D7-ABF7-8C1268F0F7B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurants.Application", "Restaurants.Application\Restaurants.Application.csproj", "{709CF70D-B81D-47D7-ABF7-8C1268F0F7B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Infrastructure", "Restaurants.Infrastructure\Restaurants.Infrastructure.csproj", "{C6437901-72A1-450D-B176-AEB5F55F993C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Restaurants.Infrastructure", "Restaurants.Infrastructure\Restaurants.Infrastructure.csproj", "{C6437901-72A1-450D-B176-AEB5F55F993C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Restaurants.Application.Tests", "Restaurants.Application.Tests\Restaurants.Application.Tests.csproj", "{E1A6C7A1-B99E-4275-A323-349E49004A8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{C6437901-72A1-450D-B176-AEB5F55F993C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6437901-72A1-450D-B176-AEB5F55F993C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6437901-72A1-450D-B176-AEB5F55F993C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1A6C7A1-B99E-4275-A323-349E49004A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A6C7A1-B99E-4275-A323-349E49004A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1A6C7A1-B99E-4275-A323-349E49004A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1A6C7A1-B99E-4275-A323-349E49004A8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
