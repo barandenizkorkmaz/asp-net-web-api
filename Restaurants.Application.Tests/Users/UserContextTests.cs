@@ -55,7 +55,7 @@ public class UserContextTests
     {
         // arrange
 
-        var httpContextAccessorMock = new Mock<HttpContextAccessor>();
+        var httpContextAccessorMock = new Mock<IHttpContextAccessor>();
         httpContextAccessorMock.Setup(x => x.HttpContext).Returns((HttpContext)null);
 
         var userContext = new UserContext(httpContextAccessorMock.Object);
@@ -67,7 +67,7 @@ public class UserContextTests
         // assert
         action.Should()
             .Throw<InvalidOperationException>()
-            .WithMessage("User context is not present");
+            .WithMessage("User context is not present.");
     }
 
 }
